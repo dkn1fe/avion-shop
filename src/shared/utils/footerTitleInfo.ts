@@ -1,7 +1,3 @@
-export const footerTitleInfo: IFooterTitleItem[] = [
-  { text: "Our Company", link: "#" },
-];
-
 export const footerFirstListInfo: IFooterTitleItem[] = [
   { text: "Menu", link: "#" },
   { text: "New arrivals", link: "#" },
@@ -18,4 +14,12 @@ export const footerSecondListInfo: IFooterTitleItem[] = [
   { text: "Homeware", link: "#" },
   { text: "Plant pots", link: "#" },
   { text: "Chairs", link: "#" },
+];
+
+export const footerThirdListInfo: IFooterTitleItem[] = [
+  { text: "About us", link: "#" },
+  { text: "Vacancies", link: "#" },
+  { text: "Contact us", link: "#" },
+  { text: "Privacy", link: "#" },
+  { text: "Returns policy", link: "#" },
 ];
