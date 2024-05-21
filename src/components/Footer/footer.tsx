@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
 import {
   footerFirstListInfo,
   footerSecondListInfo,
@@ -20,7 +19,7 @@ const Footer: FC = () => {
       <div className="bg-indigo-800">
         <div className="container max-w-[1400px]">
           <div>
-            <div className="justify-between flex  max-w-[1400px] pt-10 pb-10">
+            <div className="justify-between flex  max-w-[1400px] pt-10 pb-10 max-[500px]: flex-wrap gap-20">
               <div className="justify-around flex-col flex gap-2 list-none">
                 {footerFirstListInfo.map((item) => (
                   <li className="text-white" key={item.text}>
@@ -49,7 +48,7 @@ const Footer: FC = () => {
               <div className="">
                 <h2 className="text-white">Join our mailing list</h2>
                 <input type="text" />
-                <button>FFFFFF</button>
+                <button>FFFFF</button>
               </div>
             </div>
 
@@ -58,14 +57,14 @@ const Footer: FC = () => {
             </div>
 
             <div className="max-w-[1400px] flex mt-10 mb-10 pb-10 items-center justify-between">
-              <p>Copyright 2024 Avion LTD</p>
-              <div className="flex gap-5">
-                <Linkedin />
-                <Facebook />
-                <Instagram />
-                <Twitch />
-                <Twitter />
-                <Youtube />
+              <p className="text-white">Copyright 2024 Avion LTD</p>
+              <div className="hidden text-center sm:flex gap-5 ">
+                <Linkedin className="text-white" />
+                <Facebook className="text-white" />
+                <Instagram className="text-white" />
+                <Twitch className="text-white" />
+                <Twitter className="text-white" />
+                <Youtube className="text-white" />
               </div>
             </div>
           </div>
