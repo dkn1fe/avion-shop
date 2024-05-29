@@ -30,7 +30,6 @@ export const CaruselBlock: FC<CaruselBlockProps> = ({
       <div className="hidden md:block">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
           {slidesInfoList.map((item) => (
-
             <div key={item._id} className="flex flex-col items-start">
               <img src={item.imgUrl} alt={item.name} />
               <div className="flex flex-col items-start pt-3 gap-2">
