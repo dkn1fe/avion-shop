@@ -5,6 +5,7 @@ interface CeramicList {
      _id:string,
      name:string,
      price:number,
+     imgUrl:string
      dimensions:{},
      description:string,
      specification:string[],
