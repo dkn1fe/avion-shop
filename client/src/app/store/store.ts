@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import  ceramicSlice  from "./ceramicSlice";
+import productSlise from "./productSlise";
 
 export const store = configureStore({
   reducer: {
-    ceramicSlice
+    ceramicSlice,
+    productSlise
   },
 });
 
