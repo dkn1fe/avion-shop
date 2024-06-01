@@ -5,15 +5,16 @@ import {
   CarouselItem,
 } from "@/shared/ui/ui/carousel";
 import { FC } from "react";
+import { Link } from "react-router-dom";
 
 interface SlidesInfo {
   _id: string;
   name: string;
   price: number;
   imgUrl: string;
-  dimensions: Record<string, number>;
-  description: string;
-  specification: string[];
+  dimensions?: Record<string, number>;
+  description?: string;
+  specification?: string[];
 }
 
 interface CaruselMobileProps {
@@ -24,12 +25,10 @@ export const CaruselMobile: FC<CaruselMobileProps> = ({ slidesInfoList }) => {
   return (
     <Carousel className="w-full max-w-sm">
       <CarouselContent>
-        {slidesInfoList.map((item) => (
-            <Card className="[border:none] pt-8 pl-5">
-              <div
-                key={item._id}
-                className="flex flex-col min-w-[250px]"
-              >
+        {slidesInfoList?.map((item) => (
+          <Link to={`/product/${item._id}`}>
+            <Card key={item._id} className="[border:none] pt-8 pl-5">
+              <div key={item._id} className="flex flex-col min-w-[250px]">
                 <div className="relative pb-[100%] w-full rounded-lg overflow-hidden">
                   <img
                     className="absolute object-cover h-full w-full"
@@ -43,6 +42,7 @@ export const CaruselMobile: FC<CaruselMobileProps> = ({ slidesInfoList }) => {
                 </div>
               </div>
             </Card>
+          </Link>
         ))}
       </CarouselContent>
     </Carousel>

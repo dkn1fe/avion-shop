@@ -1,4 +1,4 @@
-         
+import { Link } from "react-router-dom";
 import { Button } from "@/shared/ui/ui/button";
 import { FC } from "react";
 import { CaruselMobile } from "./CaruselMobile";
@@ -8,13 +8,13 @@ interface CeramicItem {
   name: string;
   price: number;
   imgUrl: string;
-  dimensions: Record<string, number>;
-  description: string;
-  specification: string[];
+  dimensions?: Record<string, number>;
+  description?: string;
+  specification?: string[];
 }
 
 interface CaruselBlockProps {
-  title: string;
+  title:string;
   slidesInfoList: CeramicItem[];
 }
 
@@ -25,18 +25,19 @@ export const CaruselBlock: FC<CaruselBlockProps> = ({
   return (
     <div className="container">
       <h3 className="text-3xl">{title}</h3>
-
       {/* Десктоп версия */}
       <div className="hidden md:block">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
-          {slidesInfoList.map((item) => (
-            <div key={item._id} className="flex flex-col items-start">
-              <img src={item.imgUrl} alt={item.name} />
-              <div className="flex flex-col items-start pt-3 gap-2">
-                <h3>{item.name}</h3>
-                <p>{item.price} $</p>
+          {slidesInfoList?.map((item) => (
+            <Link key = {item._id} to={`/product/${item._id}`}>
+              <div key={item._id} className="flex flex-col items-start">
+                <img src={item.imgUrl} alt={item.name} />
+                <div className="flex flex-col items-start pt-3 gap-2">
+                  <h3>{item.name}</h3>
+                  <p>{item.price} $</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex justify-center mt-10 w-full">

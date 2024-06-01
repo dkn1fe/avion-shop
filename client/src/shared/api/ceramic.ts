@@ -8,3 +8,11 @@ export const fetchCeramicsInfo = createAsyncThunk(
         return response.json();
     }
 )
+
+export const fetchCeramicsInfoById = createAsyncThunk(
+    'fetch/fetchProduct',
+    async(id:string | undefined) => {
+        const response = await fetch(`${coreApi}/ceramics/${id}`);
+        return response.json();
+    }
+)
