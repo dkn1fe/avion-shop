@@ -20,7 +20,7 @@ const Footer: FC = () => {
     <div className="bg-[#2A254B]">
       <div className="container">
         <div>
-          <div className="justify-between flex py-10 max-[500px]:flex-wrap gap-20">
+          <div className="justify-between flex py-10 max-[1000px]:flex-wrap gap-20">
             <div className="justify-around flex-col flex gap-2 list-none">
               {footerFirstListInfo.map((item) => (
                 <li className="text-white" key={item.text}>
@@ -49,7 +49,7 @@ const Footer: FC = () => {
               <h2 className="text-white">Join our mailing list</h2>
               <div className="flex mt-5">
                 <Input
-                  className="bg-[#FFFFFF] opacity-15 pl-5 h-[56px]  rounded-none w-[509px] max-[500px]:w-[224px]"
+                  className="bg-[#FFFFFF] opacity-15 pl-5 h-[56px]  rounded-none w-[480px] max-[600px]:w-[224px]"
                   placeholder="your@email.com"
                   type="text"
                 />
