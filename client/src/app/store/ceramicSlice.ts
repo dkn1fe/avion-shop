@@ -1,18 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCeramicsInfo } from "@/shared/api/ceramic";
 
-interface CeramicList {
-     _id:string,
-     name:string,
-     price:number,
-     imgUrl:string
-     dimensions:{},
-     description:string,
-     specification:string[],
+export interface AlsoLike {
+  _id: string;
+  name: string;
+  imgUrl: string;
+  price: number;
 }
-
+export interface CeramicItem {
+  _id: string;
+  name: string;
+  price: number;
+  imgUrl: string;
+  dimensions: Record<string, number>;
+  description: string;
+  specification: string[];
+  alsoLike: AlsoLike[];
+}
 interface CeramicListSliceData{
-    ceramicInfoList:CeramicList[],
+    ceramicInfoList:CeramicItem[],
     ceramicInfoStatus:'idle' | 'loading' | 'error'
 }
 

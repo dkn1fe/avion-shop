@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchCeramicsInfoById } from "@/shared/api/ceramic";
 
-interface AlsoLike {
+export interface AlsoLike {
   _id: string;
   name: string;
   imgUrl: string;
   price: number;
 }
 
-interface CeramicItem {
+export interface CeramicItem {
   _id: string;
   name: string;
   price: number;

@@ -15,6 +15,7 @@ export const ProductInfo: FC<ProductInfoProps> = ({ productId }) => {
   const { productInfo } = useSelector(
     (state: RootState) => state.productSlise
   );
+  
 
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
@@ -51,7 +52,7 @@ export const ProductInfo: FC<ProductInfoProps> = ({ productId }) => {
           </ul>
         </div>
         <Dimension DimensionList={productInfo} />
-        <AddCard />
+        <AddCard productInfo = {productInfo} />
       </div>
     </div>
   );
