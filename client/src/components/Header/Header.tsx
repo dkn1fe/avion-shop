@@ -4,6 +4,7 @@ import { Assortmen } from "./Assortmen";
 import { useSelector } from "react-redux";
 import { RootState } from "@/app/store/store";
 import { Link } from "react-router-dom";
+import { SearchHeader } from "./Search";
 
 export const Header = () => {
   const { cartItems } = useSelector((state: RootState) => state.cartSlice);
@@ -13,7 +14,7 @@ export const Header = () => {
       <div className="p-6">
         <div className="flex items-center justify-between max-[600px]:flex-row">
           <div className="flex items-center justify-between gap-4 max-[600px]:order-2">
-            <Search size={20} />
+            <SearchHeader/>
             <Menu className="min-[600px]:hidden" size={20} />
           </div>
           <h3 className="text-2xl text-neutral-800">Avion</h3>
