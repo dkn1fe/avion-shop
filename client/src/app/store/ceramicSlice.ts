@@ -16,6 +16,7 @@ export interface CeramicItem {
   description: string;
   specification: string[];
   alsoLike: AlsoLike[];
+  type:string,
 }
 interface CeramicListSliceData{
     ceramicInfoList:CeramicItem[],

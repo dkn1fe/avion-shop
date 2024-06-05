@@ -14,7 +14,7 @@ interface CeramicItem {
 }
 
 interface CaruselBlockProps {
-  title:string;
+  title: string;
   slidesInfoList: CeramicItem[];
 }
 
@@ -29,12 +29,12 @@ export const CaruselBlock: FC<CaruselBlockProps> = ({
       <div className="hidden md:block">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
           {slidesInfoList?.map((item) => (
-            <Link key = {item._id} to={`/product/${item._id}`}>
+            <Link key={item._id} to={`/product/${item._id}`}>
               <div key={item._id} className="flex flex-col items-start">
                 <img src={item.imgUrl} alt={item.name} />
                 <div className="flex flex-col items-start pt-3 gap-2">
                   <h3>{item.name}</h3>
-                  <p>{item.price} $</p>
+                  <p>£ {item.price}</p>
                 </div>
               </div>
             </Link>
@@ -42,7 +42,9 @@ export const CaruselBlock: FC<CaruselBlockProps> = ({
         </div>
         <div className="flex justify-center mt-10 w-full">
           <Button variant="secondary" className="w-full sm:w-auto px-6">
-            <p>View Collection</p>
+            <Link to="/allproduct">
+              <p>View Collection</p>
+            </Link>
           </Button>
         </div>
       </div>
