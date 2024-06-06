@@ -1,4 +1,4 @@
-import { Search, ShoppingCart, Menu } from "lucide-react";
+import {  ShoppingCart, Menu } from "lucide-react";
 import { Profile } from "./Profile";
 import { Assortmen } from "./Assortmen";
 import { useSelector } from "react-redux";

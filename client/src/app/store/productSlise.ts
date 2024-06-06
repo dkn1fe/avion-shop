@@ -17,15 +17,16 @@ export interface CeramicItem {
   description: string;
   specification: string[];
   alsoLike: AlsoLike[];
+  type:string,
 }
 
 interface CeramicListSliceData {
-  productInfo: CeramicItem[];
+  productInfo: CeramicItem | null;
   productInfoStatus: "idle" | "loading" | "error";
 }
 
 const initialState: CeramicListSliceData = {
-  productInfo: [],
+  productInfo: null,
   productInfoStatus: "idle",
 };
 

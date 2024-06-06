@@ -1,8 +1,7 @@
-import { Card, CardContent } from "@/shared/ui/ui/card";
+import { Card } from "@/shared/ui/ui/card";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
 } from "@/shared/ui/ui/carousel";
 import { FC } from "react";
 import { Link } from "react-router-dom";

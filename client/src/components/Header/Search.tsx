@@ -2,7 +2,7 @@ import { RootState } from "@/app/store/store";
 import { Input } from "@/shared/ui/ui/input";
 import { Search, X } from "lucide-react";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export const SearchHeader = () => {
