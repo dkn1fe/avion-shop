@@ -3,14 +3,23 @@ import { Button } from "@/shared/ui/ui/button";
 import { FC } from "react";
 import { CaruselMobile } from "./CaruselMobile";
 
-interface CeramicItem {
+export interface AlsoLike {
+  _id: string;
+  name: string;
+  imgUrl: string;
+  price: number;
+}
+
+export interface CeramicItem {
   _id: string;
   name: string;
   price: number;
   imgUrl: string;
-  dimensions?: Record<string, number>;
-  description?: string;
-  specification?: string[];
+  dimensions: Record<string, number>;
+  description: string;
+  specification: string[];
+  alsoLike: AlsoLike[];
+  type:string,
 }
 
 interface CaruselBlockProps {
@@ -28,7 +37,7 @@ export const CaruselBlock: FC<CaruselBlockProps> = ({
       {/* Десктоп версия */}
       <div className="hidden md:block">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10">
-          {slidesInfoList?.map((item) => (
+          {slidesInfoList && slidesInfoList?.map((item) => (
             <Link key={item._id} to={`/product/${item._id}`}>
               <div key={item._id} className="flex flex-col items-start">
                 <img src={item.imgUrl} alt={item.name} />

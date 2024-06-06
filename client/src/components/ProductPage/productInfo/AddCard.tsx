@@ -6,17 +6,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart, removeCart } from "@/app/store/cartSlice";
 import { RootState } from "@/app/store/store";
 import classNames from "classnames";
+
 interface AddCardProps {
-  productInfo: CeramicItem[];
+  productInfo: CeramicItem;
 }
 
 export const AddCard: FC<AddCardProps> = ({ productInfo }) => {
   const [quantity, setQuantity] = useState(1);
   const { cartItems } = useSelector((state: RootState) => state.cartSlice);
-  const [isHasCart, setIsHasCart] = useState(false);
   const dispatch = useDispatch();
   const isInCart = cartItems.some((item) => item.id === productInfo._id);
-  console.log(cartItems);
+  
 
   const addQuantityCart = () => {
     setQuantity(quantity + 1);
@@ -32,14 +32,13 @@ export const AddCard: FC<AddCardProps> = ({ productInfo }) => {
   }, [cartItems, productInfo]);
 
   const addCartInfo = () => {
-    setIsHasCart(isInCart);
     if (isInCart) {
       dispatch(removeCart(productInfo._id));
     } else {
       const cartInfo = {
         id: productInfo._id,
         name: productInfo.name,
-        imgUrL: productInfo.imgUrl,
+        imgUrl: productInfo.imgUrl,
         quantity,
         price: productInfo.price,
         description: productInfo.description,

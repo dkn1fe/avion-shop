@@ -1,8 +1,7 @@
-import { Card, CardContent } from "@/shared/ui/ui/card";
+import { Card } from "@/shared/ui/ui/card";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
 } from "@/shared/ui/ui/carousel";
 import { FC } from "react";
 import { Link } from "react-router-dom";
@@ -26,7 +25,7 @@ export const CaruselMobile: FC<CaruselMobileProps> = ({ slidesInfoList }) => {
     <Carousel className="w-full max-w-sm">
       <CarouselContent>
         {slidesInfoList?.map((item) => (
-          <Link to={`/product/${item._id}`}>
+          <Link key = {item._id} to={`/product/${item._id}`}>
             <Card key={item._id} className="[border:none] pt-8 pl-5">
               <div key={item._id} className="flex flex-col min-w-[250px]">
                 <div className="relative pb-[100%] w-full rounded-lg overflow-hidden">
