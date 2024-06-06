@@ -1,6 +1,7 @@
-import { RootState } from "@/app/store/store";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Empty } from "../empty/Empty";
+import { RootState } from "@/app/store/store";
 
 export const ItemList = () => {
   const { ceramicInfoList } = useSelector(
@@ -17,7 +18,7 @@ export const ItemList = () => {
     filterType.forEach((type) => {
       const items = ceramicInfoList.filter((item) => item.type === type);
       filteredItemList.push(...items);
-    })
+    });
 
     if (filterPrice.length) {
       filterPrice.forEach((type) => {
@@ -39,23 +40,34 @@ export const ItemList = () => {
       });
     }
   }
+
   return (
-    <div className="flex flex-wrap gap-4">
-      {filteredItemList.map((item: any) => (
-        <Link
-          key={item._id}
-          to={`/product/${item._id}`}
-          className="flex flex-col items-start w-[250px] m-2"
-        >
-          <div className="relative w-full">
-            <img className="w-full h-auto" src={item.imgUrl} alt={item.name} />
-          </div>
-          <div className="text-start mt-2">
-            <h3 className="text-lg font-semibold">{item.name}</h3>
-            <p className="text-gray-600">£ {item.price}</p>
-          </div>
-        </Link>
-      ))}
-    </div>
+    <>
+      {filteredItemList.length === 0 ? (
+        <Empty />
+      ) : (
+        <div className="flex flex-wrap gap-4 justify-center">
+          {filteredItemList.map((item: any) => (
+            <Link
+              key={item._id}
+              to={`/product/${item._id}`}
+              className="flex flex-col items-start w-[150px] md:w-[250px] p-2 transition-transform transform hover:scale-105"
+            >
+              <div className="relative w-full">
+                <img
+                  className="w-full h-auto object-cover"
+                  src={item.imgUrl}
+                  alt={item.name}
+                />
+              </div>
+              <div className="text-start mt-2">
+                <h3 className="text-lg font-semibold">{item.name}</h3>
+                <p className="text-gray-600">£ {item.price}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      )}
+    </>
   );
 };
