@@ -38,7 +38,7 @@ export const AddCard: FC<AddCardProps> = ({ productInfo }) => {
       const cartInfo = {
         id: productInfo._id,
         name: productInfo.name,
-        imgUrL: productInfo.imgUrl,
+        imgUrl: productInfo.imgUrl,
         quantity,
         price: productInfo.price,
         description: productInfo.description,

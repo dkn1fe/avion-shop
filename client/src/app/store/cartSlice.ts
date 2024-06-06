@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface CartInfo {
+export interface CartInfo {
     id: string;
     name: string;
     price: number;

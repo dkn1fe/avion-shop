@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import mainLogo from "@/layouts/img/mainBlock/mainLogo.jpg";
 import { Button } from "@/shared/ui/ui/button";
 
@@ -10,9 +11,11 @@ export const GalleryBlock = () => {
             <h3 className="text-[32px] text-white max-w-[400px]">
               The furniture brand for the future, with timeless designs
             </h3>
-            <Button className="mt-10 p-6 opacity-50" variant="secondary">
-               View collection
-            </Button>
+            <Link to="/allproduct">
+              <Button className="mt-10 p-6 opacity-50" variant="secondary">
+                View collection
+              </Button>
+            </Link>
             <p className="text-white text-lg mt-10 md:mt-[280px]">
               A new era in eco friendly furniture with Avelon, the French luxury
               retail brand with nice fonts, tasteful colors and a beautiful way
@@ -28,4 +31,3 @@ export const GalleryBlock = () => {
     </div>
   );
 };
-
