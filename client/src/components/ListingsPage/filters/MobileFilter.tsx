@@ -1,12 +1,11 @@
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/shared/ui/ui/select";
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/shared/ui/ui/popover";
 import { FC } from "react";
-
+import { Button } from "@/shared/ui/ui/button";
+import { Checkbox } from "@/shared/ui/ui/checkbox";
 interface FilterInfo {
   id: number;
   title: string;
@@ -23,19 +22,20 @@ export const MobileFilters: FC<MobileFiltersProps> = ({
   filterTypes,
   onGetFilterInfo,
 }) => {
-  
   return (
-    <Select onValueChange={(value) => onGetFilterInfo(value)}>
-      <SelectTrigger className="w-[120px]">
-        <SelectValue placeholder={filterTypes} />
-      </SelectTrigger>
-      <SelectContent>
+    <Popover>
+      <PopoverTrigger asChild>
+        <Button className="px-5">{filterTypes}</Button>
+      </PopoverTrigger>
+      <PopoverContent>
         {filterInfo.map((item) => (
-          <SelectItem key={item.id} value={item.label}>
-            {item.title}
-          </SelectItem>
+          <div key={item.id} className="flex items-center gap-3">
+            <Checkbox onClick={() => onGetFilterInfo(item.label)} />
+            <label className="text-[#2A254B]">{item.title}</label>
+          </div>
         ))}
-      </SelectContent>
-    </Select>
+      </PopoverContent>
+    </Popover>
   );
 };
+

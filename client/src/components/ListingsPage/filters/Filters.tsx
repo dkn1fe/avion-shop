@@ -47,7 +47,7 @@ export const Filters = () => {
 
   return (
     <>
-      <div className="p-5 flex-col gap-5 hidden md:flex">
+      <div className="p-5 flex-col gap-5 hidden sm:flex">
         <h3 className="text-lg font-semibold">Product type</h3>
         {filterList.map((item) => (
           <div key={item.id} className="flex items-center gap-3">
@@ -63,7 +63,7 @@ export const Filters = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col gap-3 sm:hidden">
+      <div className="flex absolute left-[35%] z-20 justify-center gap-3 sm:hidden">
         <MobileFilters
           onGetFilterInfo={onGetInfoFilterType}
           filterInfo={filterList}
