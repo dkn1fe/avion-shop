@@ -46,7 +46,7 @@ export const ItemList = () => {
       {filteredItemList.length === 0 ? (
         <Empty />
       ) : (
-        <div className="flex flex-wrap gap-4 justify-center">
+        <div className="flex flex-wrap gap-4 pt-24 justify-center">
           {filteredItemList.map((item: any) => (
             <Link
               key={item._id}
